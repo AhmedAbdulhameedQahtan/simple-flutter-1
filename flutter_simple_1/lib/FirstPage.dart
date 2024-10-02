@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_simple_1/homePage.dart';
+import 'package:flutter_simple_1/loginpage.dart';
 
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
@@ -12,33 +13,12 @@ class FirstPage extends StatefulWidget {
 }
 
 class _FirstPageState extends State<FirstPage> {
-  Timer? _timer;
-
-  _startDelay() {
-    _timer = Timer(const Duration(seconds: 2000), _goNext);
-  }
-
-  _goNext() {
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>const Homepage()),
-    );
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _startDelay();
-  }
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue[100],
-        systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: Colors.blue[100],
-            statusBarBrightness: Brightness.light),
-      ),
+
       body: Container(
         decoration: BoxDecoration(
           color: Colors.blue[50],
@@ -51,10 +31,12 @@ class _FirstPageState extends State<FirstPage> {
               decoration: BoxDecoration(
                 color: Colors.blue[100],
                 borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(70),
-                  bottomRight: Radius.circular(70),
+                  bottomLeft: Radius.circular(60),
+                  bottomRight: Radius.circular(60),
                 ),
               ),
+              child: Image.asset('assets/image1.png'),
+
             ),
             const SizedBox(
               height: 10,
@@ -82,7 +64,7 @@ class _FirstPageState extends State<FirstPage> {
               ),
             ),
             const SizedBox(
-              height: 100,
+              height: 190,
             ),
 
 
@@ -91,7 +73,7 @@ class _FirstPageState extends State<FirstPage> {
               margin: EdgeInsets.only(left: 10,right: 10),
               child: ElevatedButton(
                   onPressed: () {
-                    _goNext();
+                    Navigator.push(context, MaterialPageRoute(builder:(context)=>const Homepage()));
               },
                   child: const Text('Get Started',style: TextStyle(color: Colors.white),),
               style: ElevatedButton.styleFrom(
@@ -115,7 +97,7 @@ class _FirstPageState extends State<FirstPage> {
                     const Text('Alrady have an account?'),
                     TextButton(
                       onPressed: (){
-
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>const Loginpage()));
                       },
                       child:const Text('login', style:  TextStyle(color: Colors.blue),),)
                   ],
