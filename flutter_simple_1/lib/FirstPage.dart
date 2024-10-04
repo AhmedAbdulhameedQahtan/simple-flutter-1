@@ -73,7 +73,9 @@ class _FirstPageState extends State<FirstPage> {
               margin: EdgeInsets.only(left: 10,right: 10),
               child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder:(context)=>const Homepage()));
+                    // Navigator.push(context, MaterialPageRoute(builder:(context)=>const Homepage()));
+                    Navigator.pushReplacement(context,MaterialPageRoute (
+                        builder: (BuildContext context) => const Homepage(), ),);
               },
                   child: const Text('Get Started',style: TextStyle(color: Colors.white),),
               style: ElevatedButton.styleFrom(

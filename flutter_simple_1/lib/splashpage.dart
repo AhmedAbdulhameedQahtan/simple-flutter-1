@@ -51,16 +51,7 @@ class _SplashpageState extends State<Splashpage> {
           child: Column(
             children: [
               Image.asset('assets/image1.png'),
-              const SizedBox(height: 20,),
-              // const Text("Welcome . .",
-              //   style: TextStyle(
-              //       color: Colors.white,
-              //       fontWeight: FontWeight.bold,
-              //       fontSize: 40,
-              //     fontFamily: 'Aurora',
-              //   ),),
-              const SizedBox(height: 10,),
-
+              const SizedBox(height: 30,),
               const CircularProgressIndicator(),
 
             ],

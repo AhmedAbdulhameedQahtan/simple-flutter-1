@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_simple_1/homePage.dart';
+import 'package:flutter_simple_1/signupPage.dart';
 
 class Loginpage extends StatefulWidget {
   const Loginpage({super.key});
@@ -24,14 +25,15 @@ class _LoginpageState extends State<Loginpage> {
               children: [
                 Container(
                   width: size.width,
-                  height: size.height / 7,
+                  height: size.height / 4,
                   padding: const EdgeInsets.only(left: 8,top: 15),
-                  child: const Column(
+                  child:  Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('welcome Back !',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.black87),),
-                      SizedBox(height: 10,),
-                      Text('sign in to access your packge history and get real-time updaete on all your shipment',
+                      Text('welcome',style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,color: Colors.blue[200]),),
+                      const Text('Back !',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.black),),
+                      const SizedBox(height: 10,),
+                      const Text('sign in to access your packge history and get real-time updaete on all your shipment',
                       style: TextStyle(color: Colors.grey),),
                     ],
                   )
@@ -172,7 +174,7 @@ class _LoginpageState extends State<Loginpage> {
                         const Text('Dont have account?'),
                         TextButton(
                           onPressed: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>const Homepage()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>const SignupPage()));
                           },
                           child:const Text('Create an Account', style:  TextStyle(color: Colors.blue),),)
                       ],
